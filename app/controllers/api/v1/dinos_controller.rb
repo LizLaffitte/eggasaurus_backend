@@ -1,7 +1,7 @@
 class Api::V1::DinosController < ApplicationController
     def index
         dinos = Dino.all
-        render json: dinos
+        render json: DinoSerializer.new(dinos)
     end
 
     # def create
