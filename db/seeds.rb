@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+trex = Specie.create(name: "Tyrannosaurus Rex")
+stega = Specie.create(name: "Stegosaurus")
+tri = Specie.create(name: "Triceratops")
+
+Dino.create(name: "T-Bone", happiness: 100, hunger: 70, tiredness: 50, specie_id: trex.id)
+
+# source: https://en.wikipedia.org/wiki/African_art
