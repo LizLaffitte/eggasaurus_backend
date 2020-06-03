@@ -8,10 +8,9 @@
 Dino.destroy_all
 Specie.destroy_all
 
-trex = Specie.create(name: "Tyrannosaurus Rex", sprite_url:'images/trex_color.png')
+trex = Specie.create(name: "Tyrannosaurus Rex", sprite_url:'trex_color.png')
 stega = Specie.create(name: "Stegosaurus")
 tri = Specie.create(name: "Triceratops")
 
 Dino.create(name: "T-Bone", happiness: 100, hunger: 70, tiredness: 50, specie_id: trex.id)
 
-# source: https://en.wikipedia.org/wiki/African_art
