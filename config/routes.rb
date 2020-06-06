@@ -5,4 +5,6 @@ Rails.application.routes.draw do
       resources :species, only: [:index]
     end
   end
+
+  resources :users, only: [:create]
 end
