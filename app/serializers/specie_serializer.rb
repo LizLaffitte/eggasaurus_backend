@@ -1,4 +1,4 @@
 class SpecieSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :name, :sprite_url, :dinos
 end
