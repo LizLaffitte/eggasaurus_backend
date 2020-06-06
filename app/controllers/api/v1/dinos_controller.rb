@@ -19,17 +19,19 @@ class Api::V1::DinosController < ApplicationController
           render json: { errors: @dino.errors.full_messages }, status: :unprocessible_entity
         end
     end
-    # def create
-    #     dino = Dino.new(dino_params)
-    #     if dino.save
-    #         render json: dinos
-    #     end
-    # end
+    def create
+        dino = Dino.new(dino_params)
+        if dino.save
+            render json: dino, status :accepted
+        else 
+            render json: {errors: dino.errors.full_mesages}, status: unprocessible_entity
+        end
+    end
 
     private
     
     def dino_params
-        params.require(:dino).permit(:name, :happiness, :hunger, :tiredness)
+        params.require(:dino).permit(:name, :happiness, :hunger, :tiredness, :species_id)
     end
 
     def find_dino
