@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Dino.destroy_all
-Specie.destroy_all
+# Dino.destroy_all
+# Specie.destroy_all
 
-trex = Specie.create(name: "Tyrannosaurus Rex", sprite_url:'trex_color.png')
-stega = Specie.create(name: "Stegosaurus")
-tri = Specie.create(name: "Triceratops")
+# trex = Specie.create(name: "Tyrannosaurus Rex", sprite_url:'trex_color.png')
+# stega = Specie.create(name: "Stegosaurus")
+# tri = Specie.create(name: "Triceratops")
 
-Dino.create(name: "T-Bone", happiness: 659, hunger:659, tiredness: 659, specie_id: trex.id)
+# Dino.create(name: "T-Bone", happiness: 659, hunger:659, tiredness: 659, specie_id: trex.id)
 

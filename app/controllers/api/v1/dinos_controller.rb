@@ -29,7 +29,7 @@ class Api::V1::DinosController < ApplicationController
     private
     
     def dino_params
-        params.require(:dino).permit(:happiness, :hunger, :tiredness)
+        params.require(:dino).permit(:name, :happiness, :hunger, :tiredness)
     end
 
     def find_dino
