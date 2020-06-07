@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_06_200408) do
+ActiveRecord::Schema.define(version: 2020_06_07_000837) do
 
   create_table "dinos", force: :cascade do |t|
     t.integer "specie_id", null: false
@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(version: 2020_06_06_200408) do
     t.integer "tiredness"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "users_id"
     t.index ["specie_id"], name: "index_dinos_on_specie_id"
+    t.index ["users_id"], name: "index_dinos_on_users_id"
   end
 
   create_table "species", force: :cascade do |t|
@@ -39,4 +41,5 @@ ActiveRecord::Schema.define(version: 2020_06_06_200408) do
   end
 
   add_foreign_key "dinos", "species", column: "specie_id"
+  add_foreign_key "dinos", "users", column: "users_id"
 end
