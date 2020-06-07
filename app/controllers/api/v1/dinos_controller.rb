@@ -28,14 +28,22 @@ class Api::V1::DinosController < ApplicationController
         end
     end
 
+    def destroy
+        dino = Dino.find_by_id(params[:id])
+        dino.destroy
+        dinos = Dino.all
+        render json: DinoSerializer.new(dinos)
+    end
+
     private
     
     def dino_params
-        params.require(:dino).permit(:name, :happiness, :hunger, :tiredness, :specie_id)
+        params.require(:dino).permit(:name, :happiness, :hunger, :tiredness, :specie_id, :user_id)
     end
 
     def find_dino
         @dino = Dino.find_by_id(params[:id])
+        
     end
 end
 
