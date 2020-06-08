@@ -3,8 +3,7 @@ class UsersController < ApplicationController
     def create
         user = User.new(user_params)
         if user.save
-            session[:user_id] = user.id
-            render json: {user: user, session: session}, status: :accepted
+            render json: {id: user.id, username:user.username}, status: :accepted
         else
             render json: { errors: user.errors.full_message }, status: :unprocessable_entity
         end
