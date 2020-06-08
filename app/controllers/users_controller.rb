@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-    wrap_parameters :user, include: [:name, :password, :password_confirmation]
+    wrap_parameters :user, include: [:username, :email, :password, :password_confirmation]
     def create
         user = User.new(user_params)
         if user.save
-            render json: user, status: :accepted
+            session[:user_id] = user.id
+            render json: {user: user, session: session}, status: :accepted
         else
-            render json: { errors: user.errors.full_messages, user: user.password_digest }, status: :unprocessable_entity
+            render json: { errors: user.errors.full_message }, status: :unprocessable_entity
         end
     end
 
