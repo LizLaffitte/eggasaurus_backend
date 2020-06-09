@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     wrap_parameters :user, include: [:username, :email, :password, :password_confirmation]
+    
     def create
         user = User.new(user_params)
         if user.save

@@ -12,19 +12,19 @@ class Api::V1::DinosController < ApplicationController
     end
 
     def update
-        @dino.update(dino_params)
-        if @dino.save
-          render json: @dino, status: :accepted
+        dino.update(dino_params)
+        if dino.save
+            render json: DinoSerializer.new(dino), status: :accepted
         else
-          render json: { errors: @dino.errors.full_messages }, status: :unprocessable_entity
+          render json: { errors: dino.errors.full_messages }, status: :unprocessable_entity
         end
     end
     def create
-        @dino = Dino.new(dino_params)
-        if @dino.save
-            render json: DinoSerializer.new(@dino), status: :accepted
+        dino = Dino.new(dino_params)
+        if dino.save
+            render json: DinoSerializer.new(dino), status: :accepted
         else
-            render json: { errors: @dino.errors.full_messages }, status: :unprocessable_entity
+            render json: { errors: dino.errors.full_messages }, status: :unprocessable_entity
         end
     end
 
