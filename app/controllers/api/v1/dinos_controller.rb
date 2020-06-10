@@ -12,6 +12,7 @@ class Api::V1::DinosController < ApplicationController
     end
 
     def update
+        dino = Dino.find_by_id(params[:id])
         dino.update(dino_params)
         if dino.save
             render json: DinoSerializer.new(dino), status: :accepted
