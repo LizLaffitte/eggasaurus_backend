@@ -8,10 +8,10 @@
 # Dino.destroy_all
 # Specie.destroy_all
 
-trex = Specie.create(name: "Tyrannosaurus Rex", sprite_url:'trex_color.png')
-stega = Specie.create(name: "Stegosaurus")
+trex = Specie.create(name: "Tyrannosaurus Rex", sprite_url:'trex_color.jpg')
+stega = Specie.create(name: "Stegosaurus", sprite_url:'stega.jpg')
 tri = Specie.create(name: "Triceratops")
 liz = User.create(username: "Liz", email: "liz@liz.com", password: "dinos")
 
-Dino.create(name: "T-Bone", happiness: 659, hunger:659, tiredness: 659, specie_id: trex.id, user_id: liz.id)
+Dino.create(name: "T-Bone", happiness: 100, hunger:100, tiredness: 100, specie_id: trex.id, user_id: liz.id)
 
