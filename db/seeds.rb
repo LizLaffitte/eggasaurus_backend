@@ -10,7 +10,7 @@
 
 trex = Specie.create(name: "Tyrannosaurus Rex", sprite_url:'trex_color.jpg')
 stega = Specie.create(name: "Stegosaurus", sprite_url:'stega.jpg')
-liz = User.create(username: "Liz", email: "liz@liz.com", password: "dinos")
+liz = User.create(username: "Liz", email: "liz@liz.com", password: "dinos", score: 0)
 
 Dino.create(name: "T-Bone", happiness: 100, hunger:100, tiredness: 100, specie_id: trex.id, user_id: liz.id)
 
