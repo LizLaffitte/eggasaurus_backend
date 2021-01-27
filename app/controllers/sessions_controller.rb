@@ -4,8 +4,10 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
             render json: {user: user, session: session}
-        else
+        elsif user
             render json: { errors: "Password incorrect" }, status: :unprocessable_entity
+        else
+            render json: { errors: "User does not exist" }, status: :unprocessable_entity
         end
 
     end
